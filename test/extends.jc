@@ -1,0 +1,38 @@
+/**
+ * @constructor
+ */
+class Parent() {}
+
+/**
+ * @type {boolean}
+ * @private
+ */
+Parent.prototype.inDocument_ = false;
+
+Parent.prototype.enterDocument = function() {
+    this.inDocument_ = true;
+};
+
+/**
+ * @constructor
+ * @extends {Parent}
+ */
+class Child() extends Parent {
+  super();
+}
+
+/**
+ * @type {string}
+ * @private
+ */
+Child.prototype.status_ = 'deactive';
+
+Child.prototype.enterDocument = function() {
+    super.enterDocument();
+    this.status_ = 'active';
+};
+
+var child = new Child();
+child.enterDocument();
+console.log(child.status_);
+console.log(child.inDocument_);

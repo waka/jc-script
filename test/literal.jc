@@ -1,0 +1,12 @@
+var obj = {
+  'a': 'aaa',
+  b: function() {}
+};
+
+var arr = [1, 2, 3, 4];
+
+var arr2 = (function() {
+  return [5, 6, 7];
+})();
+
+var c = (typeof obj.b === 'function') ? 'function' : null;

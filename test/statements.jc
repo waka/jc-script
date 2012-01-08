@@ -1,0 +1,51 @@
+/**
+ * Statements translate test.
+ */
+var flag = true;
+if (flag || 1) {
+  // comment
+  return true;
+} else if (false) {
+  return false;
+} else {
+  throw new Error('test');
+}
+
+flag = 'test';
+switch (flag) {
+  case 'test':
+    return 0;
+  default:
+    break;
+}
+
+var a = '';
+try {
+  a = b + c;
+} catch (e) {
+  throw e;
+} finally {
+  a = d;
+}
+
+debugger;
+
+while (true) {
+  console.log("infinity");
+}
+
+flag = 1;
+do {
+  console.log("once");
+  flag -= 1;
+} while (flag > 0);
+
+for (var i = 0, len = 5; i < len; i++) {
+  if (i === 4) {
+    break;
+  }
+  if (i === 0) {
+    continue;
+  }
+  console.log(i);
+}
